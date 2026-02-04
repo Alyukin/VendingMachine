@@ -17,7 +17,7 @@ export default function ComfyVendingMachine() {
   const [isOn, set_isOn] = useState(false);
 
   const add_Log = (msg) => {
-    set_dbLog(prev => [{ msg, time: new Date().toLocaleTimeString()}]);
+    set_dbLog(prev => [{ msg, time: new Date().toLocaleTimeString()}, ...prev].slice(0, 20));
   };
 
   const buy = (product) => {
